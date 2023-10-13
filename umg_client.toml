@@ -89,6 +89,12 @@ any = true
 [core]
 any = true
 
+[Inky]
+any = true
+[lg]
+any = true
+[ui]
+any = true
 
 
 
