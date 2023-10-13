@@ -1,6 +1,9 @@
 
 _G.Inky = require("inky")
 
+require("ui")
+
+
 local SettingsMenu = require("examples.menu.settingsMenu")
 
 local scene   = Inky.scene()

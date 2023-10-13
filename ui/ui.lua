@@ -4,9 +4,11 @@
 ]]
 
 local ui = {}
+rawset(_G, "ui", ui)
 
 
-function ui.renderScreenRatio(element, ratio)
+
+function ui.renderScreenRatio(ratioObj, X,Y,W,H)
     local x,y,w,h
 	local W,H = love.graphics.getDimensions()
 
@@ -17,6 +19,18 @@ function ui.renderScreenRatio(element, ratio)
 	y = y*H - h/2
 	
 	element:render(x,y,w,h)
+end
+
+
+function ui.getRatio(ratio, X,Y,W,H)
+    local x,y,w,h
+
+    w = ratio.w * W
+    h = ratio.h * H
+
+	x = X + x*W - w/2
+	y = Y + y*H - h/2
+	return x,y,w,h
 end
 
 
@@ -32,6 +46,14 @@ function ui.renderRatio(parent, child, ratio)
 	
 	child:render(x,y,w,h)
 end
+
+
+ui.elems = {}
+
+local loadTree = require("load_tree")
+
+loadTree("ui/elems", ui.elems)
+
 
 
 
