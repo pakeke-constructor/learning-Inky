@@ -20,6 +20,7 @@ local unpack = unpack or table.unpack
 -- other lua version compat ^^^
 
 
+
 local function average(a, b)
     return (a+b)/2
 end
@@ -139,7 +140,64 @@ end
 
 
 
+function Region:growTo(unitW, unitH)
+    local w = math.max(unitW, self.w)
+    local h = math.max(unitH, self.h)
+    if w ~= self.w or h ~= self.h then
+        return newRegion(self.x,self.y, w,h)
+    end
+    return self
+end
 
+
+function Region:shrinkTo(unitW, unitH)
+    local w = math.min(unitW, self.w)
+    local h = math.min(unitH, self.h)
+    if w ~= self.w or h ~= self.h then
+        return newRegion(self.x,self.y, w,h)
+    end
+    return self
+end
+
+
+
+function Region:getCenter()
+    -- returns (x,y) position of center of region
+    return (self.x + self.w/2), (self.y + self.h/2)
+end
+
+
+
+function Region:centerX(other)
+    local targX, _ = self:getCenter()
+    local currX, _ = other:getCenter()
+    local dx = targX - currX
+    
+    return newRegion(self.x+dx, self.y, self.w, self.h)
+end
+
+
+function Region:centerX(other)
+    local _, targY = self:getCenter()
+    local _, currY = other:getCenter()
+    local dy = targY - currY
+    
+    return newRegion(self.x+dy, self.y, self.w, self.h)
+end
+
+
+function Region:center(other)
+    return self
+        :centerX(other)
+        :centerY(other)
+end
+
+
+
+
+function Region:get()
+    return self.x,self.y, self.w,self.h
+end
 
 
 return newRegion

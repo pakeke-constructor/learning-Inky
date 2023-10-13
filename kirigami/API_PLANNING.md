@@ -67,6 +67,8 @@ local cx = region:centerX(otherRegion)
 local cy = region:centerY(otherRegion)
 -- centers `region` vertically with respect to otherRegion
 
+local centered = region:center(otherRegion)
+-- centers `region` with respect to otherRegion
 
 
 
