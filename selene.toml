@@ -1,5 +1,5 @@
 
-std = "umg_client"
+std = "learning_inky"
 
 [rules]
 multiple_statements = "allow"

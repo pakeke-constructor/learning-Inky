@@ -1,0 +1,25 @@
+
+[selene]
+base = "lua51"
+name = "love2d"
+
+
+[love]
+any = true
+# TODO: make actual bindings for this
+
+[Inky]
+any = true
+
+[ui]
+any = true
+
+
+
+
+## Standard library modifications
+[assert]
+any = true
+
+
+
