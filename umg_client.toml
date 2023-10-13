@@ -1,0 +1,101 @@
+
+[selene]
+base = "lua51"
+name = "love2d"
+
+
+[love]
+any = true
+# TODO: make actual bindings for this
+
+[string.buffer]
+any = true
+
+[bit]
+any = true
+
+[ffi]
+any = true
+
+[enet]
+any = true
+
+[constants]
+any = true
+
+[variables]
+any = true
+
+[tools]
+any = true
+
+[cy]
+any = true
+
+[event]
+any = true
+
+[tc]
+any = true
+
+[Slab]
+any = true
+
+[flux]
+any = true
+
+[luasteam]
+any = true
+
+[log]
+any = true
+
+
+
+[translate]
+any = true
+
+[box]
+any = true
+
+[await]
+any = true
+
+
+
+# event callbacks
+[sevent]
+any = true
+[cevent]
+any = true
+
+[mevent] # mod event (used on client AND server, w/ mod api.)
+any = true
+
+
+
+# WARNING: inspect only exists if constants.DEBUG is truthy
+[inspect]
+any = true
+
+
+[connection]
+any = true
+
+
+[table]
+any = true
+
+[core]
+any = true
+
+
+
+
+
+## Standard library modifications
+[assert]
+any = true
+
+
+
