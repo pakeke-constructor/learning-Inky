@@ -1,5 +1,7 @@
 
 _G.Inky = require("inky")
+_G.kirigami = require("Kirigami.kirigami")
+
 
 require("ui")
 
