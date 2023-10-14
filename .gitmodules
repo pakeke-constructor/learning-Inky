@@ -1,0 +1,3 @@
+[submodule "Kirigami"]
+	path = Kirigami
+	url = git@github.com:pakeke-constructor/Kirigami.git
